@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HushStrike Studio — Professional Game Assets & Creator Tools</title>
+    <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #161922;
+            --accent-gold: #d4af37;
+            --accent-teal: #00f5d4;
+            --text-main: #f0f2f5;
+            --text-muted: #94a3b8;
+            --border-color: #2a2e3d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(to bottom, #13161f, var(--bg-color));
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--accent-teal);
+        }
+
+        .tagline {
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            width: 100%;
+        }
+
+        .hero-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 2rem;
+        }
+
+        .hero-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero-card p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-teal);
+            color: var(--bg-color);
+            font-weight: 700;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 14px rgba(0, 245, 212, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #00c4a7;
+            transform: translateY(-2px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .feature-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+        }
+
+        .feature-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HushStrike <span>Studio</span></div>
+        <div class="tagline">Professional game assets, VTT tokens, and creator tools across all genres.</div>
+    </header>
+
+    <main>
+        <div class="hero-card">
+            <h2>Pack #001 Available Now</h2>
+            <p>Explore our flagship release: <strong>Cursed Relics & Soul Vessels</strong>. Multi-resolution game dev icons, animated VTT tokens, streamer emotes, and high-res print stickers.</p>
+            <a href="https://itch.io" class="btn" target="_blank">Visit Itch.io Storefront</a>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>Game Dev Ready</h3>
+                <p>Clean, transparent asset grids scaled precisely from 512px down to 64px for seamless engine integration.</p>
+            </div>
+            <div class="feature-box">
+                <h3>VTT & Streamer Packs</h3>
+                <p>Custom-framed circular tabletop tokens and transparent emotes optimized for Discord and Twitch.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Commercial License</h3>
+                <p>Every download includes a clear, developer-friendly commercial license and AI transparency disclosure.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HushStrike Studio. All rights reserved. | Contact: support@hushstrikestudio.com</p>
+    </footer>
+
+</body>
+</html>
