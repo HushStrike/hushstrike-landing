@@ -5,26 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HushStrike Studio | Professional Multi-Genre Game Assets</title>
     
-    <!-- SEO & Open Graph Social Preview Meta Tags -->
     <meta name="description" content="Engine-ready pixel art sprites, tilesets, VTT tokens, and creator tools built across dark fantasy, sci-fi, cozy, and retro aesthetics.">
     <meta property="og:title" content="HushStrike Studio | Professional Multi-Genre Game Assets">
     <meta property="og:description" content="Engine-ready pixel art sprites, tilesets, VTT tokens, and creator tools. Explore Pack #001: Cursed Relics & Soul Vessels.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.hushstrikestudio.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #07090e;
-            --bg-card: #0d111a;
-            --bg-card-hover: #131a28;
+            --bg-deep: #05070b;
+            --card-surface: #0a0e17;
             --accent-cyan: #00f2fe;
             --accent-blue: #4facfe;
-            --accent-purple: #9f7aea;
-            --text-main: #f1f5f9;
-            --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(0, 242, 254, 0.3);
+            --accent-purple: #9d4edd;
+            --accent-gold: #e0a96d;
+            --text-main: #f8fafc;
+            --text-muted: #8e9bb0;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(0, 242, 254, 0.4);
         }
 
         * {
@@ -36,26 +35,19 @@
         body {
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(ellipse at 50% 0%, rgba(20, 35, 60, 0.6) 0%, transparent 60%),
+                radial-gradient(circle at 10% 20%, rgba(157, 78, 221, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 25%, rgba(0, 242, 254, 0.08) 0%, transparent 40%);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 10%, rgba(15, 23, 42, 0.8) 0%, rgba(7, 9, 14, 0.95) 70%);
-            z-index: -1;
+            justify-content: center;
+            padding: 50px 20px 80px 20px;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1040px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -63,200 +55,252 @@
             gap: 48px;
         }
 
-        /* Header */
+        /* Studio Header */
         header {
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .badge {
             background: rgba(0, 242, 254, 0.08);
-            border: 1px solid rgba(0, 242, 254, 0.25);
+            border: 1px solid rgba(0, 242, 254, 0.3);
             color: var(--accent-cyan);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
+            padding: 6px 18px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
         }
 
         h1 {
-            font-size: clamp(2.5rem, 5vw, 3.8rem);
-            font-weight: 800;
-            letter-spacing: -0.02em;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 900;
+            letter-spacing: 0.02em;
             color: #ffffff;
+            text-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
         }
 
         h1 span {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            background: linear-gradient(135deg, var(--accent-cyan), #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         header p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 650px;
+            max-width: 640px;
             line-height: 1.6;
         }
 
-        /* Hero / Flagship Banner */
+        /* Ornate Hero Showcase (Pack 001) */
         .hero-banner {
             width: 100%;
-            background: linear-gradient(180deg, var(--bg-card) 0%, rgba(13, 17, 26, 0.9) 100%);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 48px 32px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 32px;
             position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            background: linear-gradient(180deg, #0d121c 0%, #07090f 100%);
+            border: 2px solid rgba(0, 242, 254, 0.35);
+            border-radius: 20px;
+            padding: 44px 32px;
+            display: grid;
+            grid-template-columns: 180px 1fr 180px;
+            align-items: center;
+            gap: 24px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), inset 0 0 30px rgba(0, 242, 254, 0.08);
+            overflow: hidden;
         }
 
-        .hero-banner::after {
-            content: '';
+        /* Decorative filigree corners */
+        .hero-banner::before {
+            content: "✦";
             position: absolute;
-            inset: 0;
-            border-radius: 24px;
-            border: 1px solid transparent;
-            background: linear-gradient(135deg, var(--border-glow), transparent) border-box;
-            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
+            top: 10px; left: 16px;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            opacity: 0.7;
+        }
+        .hero-banner::after {
+            content: "✦";
+            position: absolute;
+            top: 10px; right: 16px;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            opacity: 0.7;
         }
 
-        .art-preview-row {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .art-preview-card {
-            flex: 1;
-            min-width: 280px;
-            max-width: 450px;
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 20px;
+        .side-art {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
-        .art-preview-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .relic-item {
+            width: 100px;
+            height: 100px;
+            border-radius: 14px;
+            background: radial-gradient(circle, rgba(157, 78, 221, 0.25) 0%, rgba(0,0,0,0.6) 80%);
+            border: 1px solid rgba(157, 78, 221, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.35);
+            animation: pulseGlow 4s infinite ease-in-out;
+        }
+
+        .vessel-item {
+            width: 100px;
+            height: 100px;
+            border-radius: 14px;
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.25) 0%, rgba(0,0,0,0.6) 80%);
+            border: 1px solid rgba(0, 242, 254, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
+            animation: pulseGlow 4s infinite ease-in-out reverse;
+        }
+
+        .side-art-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .hero-content {
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 16px;
-            max-width: 700px;
         }
 
         .hero-content h2 {
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
             color: #ffffff;
+            letter-spacing: 0.02em;
         }
 
         .hero-content p {
             color: var(--text-muted);
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.6;
+            max-width: 520px;
         }
 
-        .btn-primary {
+        .hero-content p strong {
+            color: #ffffff;
+        }
+
+        .btn-store {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            color: #07090e;
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 14px 36px;
-            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent-cyan), #38bdf8);
+            color: #05070b;
+            font-weight: 800;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            padding: 14px 34px;
+            border-radius: 10px;
             text-decoration: none;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.45);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
         }
 
-        .btn-primary:hover {
+        .btn-store:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
+            box-shadow: 0 0 45px rgba(0, 242, 254, 0.7);
         }
 
-        /* Asset Universes Grid */
+        /* Section Titles */
         .section-title {
+            font-family: 'Cinzel', serif;
             font-size: 1.5rem;
             font-weight: 700;
             align-self: flex-start;
-            margin-top: 10px;
             color: #ffffff;
-            border-left: 4px solid var(--accent-cyan);
+            border-left: 3px solid var(--accent-cyan);
             padding-left: 12px;
         }
 
+        /* Asset Universes Grid */
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
             gap: 24px;
             width: 100%;
         }
 
         .universe-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 24px;
+            background-color: var(--card-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .universe-card:hover {
             transform: translateY(-4px);
-            background-color: var(--bg-card-hover);
-            border-color: rgba(0, 242, 254, 0.25);
+            border-color: rgba(0, 242, 254, 0.3);
         }
 
-        .universe-img {
+        .card-graphic {
             width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        /* Illustrated card banners using styled atmospheric layers */
+        .dark-fantasy-bg {
+            background: linear-gradient(135deg, #160a22 0%, #08040d 100%);
+        }
+        .cyberpunk-bg {
+            background: linear-gradient(135deg, #041b24 0%, #030a10 100%);
+        }
+        .cozy-bg {
+            background: linear-gradient(135deg, #24190b 0%, #0e0904 100%);
+        }
+
+        .graphic-art-showcase {
+            font-size: 4rem;
+            filter: drop-shadow(0 0 16px rgba(0, 242, 254, 0.4));
+        }
+
+        .card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .universe-tag {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--accent-cyan);
         }
 
         .universe-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: #ffffff;
         }
 
@@ -266,13 +310,40 @@
             line-height: 1.6;
         }
 
-        /* Footer */
-        footer {
-            margin-top: 40px;
-            text-align: center;
+        /* Feature Cards */
+        .feature-card {
+            background-color: var(--card-surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .feature-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid var(--border-color);
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-subtle);
             width: 100%;
             padding-top: 24px;
         }
@@ -282,86 +353,113 @@
             text-decoration: none;
         }
 
-        footer a:hover {
-            text-decoration: underline;
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(157, 78, 221, 0.35); }
+            50% { transform: scale(1.04); box-shadow: 0 0 35px rgba(157, 78, 221, 0.6); }
         }
 
-        @media (max-width: 768px) {
-            body { padding: 20px 12px; }
-            .hero-banner { padding: 32px 16px; }
+        @media (max-width: 820px) {
+            .hero-banner {
+                grid-template-columns: 1fr;
+                padding: 32px 20px;
+            }
+            .side-art {
+                flex-direction: row;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header -->
+        <!-- Studio Header -->
         <header>
             <div class="badge">Professional Multi-Genre Asset Studio</div>
             <h1>HushStrike <span>Studio</span></h1>
             <p>Engine-ready pixel art sprites, tilesets, VTT tokens, and creator tools built across dark fantasy, sci-fi, cozy, and retro aesthetics.</p>
         </header>
 
-        <!-- Hero / Flagship Release Banner -->
+        <!-- Flagship Hero Showcase -->
         <section class="hero-banner">
-            <div class="art-preview-row">
-                <div class="art-preview-card">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Cursed Relics Preview">
-                    <span style="font-size: 0.85rem; color: var(--accent-purple); font-weight: 600;">Cursed Relics & Artifacts</span>
-                </div>
-                <div class="art-preview-card">
-                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Soul Vessels Preview">
-                    <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">Soul Vessels & Potions</span>
-                </div>
+            <!-- Left Side Art: Cursed Relics -->
+            <div class="side-art">
+                <div class="relic-item">🔮</div>
+                <div class="side-art-label" style="color: var(--accent-purple);">Cursed Relics</div>
             </div>
 
+            <!-- Central Callout -->
             <div class="hero-content">
                 <h2>Pack #001 Available Now</h2>
                 <p>Explore our flagship release: <strong>Cursed Relics & Soul Vessels</strong>. Multi-resolution game dev icons, animated VTT tokens, streamer emotes, and high-res print stickers crafted for indie creators across all genres.</p>
-                <a href="https://hushstrike.itch.io" target="_blank" class="btn-primary">Visit Itch.io Storefront</a>
+                <a href="https://hushstrike.itch.io" target="_blank" class="btn-store">Visit Itch.io Storefront</a>
+            </div>
+
+            <!-- Right Side Art: Soul Vessels -->
+            <div class="side-art">
+                <div class="vessel-item">⚗️</div>
+                <div class="side-art-label" style="color: var(--accent-cyan);">Soul Vessels</div>
             </div>
         </section>
 
-        <!-- Asset Universes Grid -->
+        <!-- Asset Universes Showcase -->
         <h2 class="section-title">Explore Our Asset Universes</h2>
         <div class="grid-3">
+            <!-- Dark Fantasy Card -->
             <div class="universe-card">
-                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Dark Fantasy Art" class="universe-img">
-                <div class="universe-tag">Dark Fantasy & RPG</div>
-                <h3>Grim & Heroic Realms</h3>
-                <p>Gritty combat sprites, weathered steel armor icons, arcane spell effects, and cavernous battle backgrounds built for atmospheric adventures.</p>
+                <div class="card-graphic dark-fantasy-bg">
+                    <div class="graphic-art-showcase">⚔️</div>
+                </div>
+                <div class="card-body">
+                    <div class="universe-tag">Dark Fantasy & RPG</div>
+                    <h3>Grim & Heroic Realms</h3>
+                    <p>Gritty combat sprites, weathered steel armor icons, arcane spell effects, and cavernous battle backgrounds built for atmospheric adventures.</p>
+                </div>
             </div>
 
+            <!-- Cyberpunk Card -->
             <div class="universe-card">
-                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" alt="Cyberpunk Sci-Fi Art" class="universe-img">
-                <div class="universe-tag">Cyberpunk & Sci-Fi</div>
-                <h3>Neon & Dystopian Tech</h3>
-                <p>Holographic UI elements, cybernetic gear, gritty urban tilesets, and high-tech weapon iconography for futuristic game settings.</p>
+                <div class="card-graphic cyberpunk-bg">
+                    <div class="graphic-art-showcase">🦾</div>
+                </div>
+                <div class="card-body">
+                    <div class="universe-tag">Cyberpunk & Sci-Fi</div>
+                    <h3>Neon & Dystopian Tech</h3>
+                    <p>Holographic UI elements, cybernetic gear, gritty urban tilesets, and high-tech weapon iconography for futuristic game settings.</p>
+                </div>
             </div>
 
+            <!-- Cozy Pixel Card -->
             <div class="universe-card">
-                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Cozy Pixel Art" class="universe-img">
-                <div class="universe-tag">Cozy & Retro Pixel Art</div>
-                <h3>Charming & Nostalgic Worlds</h3>
-                <p>Vibrant farming tiles, cheerful character sprites, relaxing UI frames, and classic 16-bit sprite sheets tailored for heartwarming indie titles.</p>
+                <div class="card-graphic cozy-bg">
+                    <div class="graphic-art-showcase">🌾</div>
+                </div>
+                <div class="card-body">
+                    <div class="universe-tag">Cozy & Retro Pixel Art</div>
+                    <h3>Charming & Nostalgic Worlds</h3>
+                    <p>Vibrant farming tiles, cheerful character sprites, relaxing UI frames, and classic 16-bit sprite sheets tailored for heartwarming indie titles.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Features Grid -->
+        <!-- Engine & Creator Specs -->
         <div class="grid-3">
-            <div class="universe-card">
+            <div class="feature-card">
+                <div class="feature-icon">📐</div>
                 <div class="universe-tag">Engine Ready</div>
                 <h3>Game Dev Ready Grids</h3>
                 <p>Clean, transparent asset grids scaled precisely from 512px down to 64px for seamless engine integration in Unity, Godot, and RPG Maker.</p>
             </div>
 
-            <div class="universe-card">
+            <div class="feature-card">
+                <div class="feature-icon">🎲</div>
                 <div class="universe-tag">Tabletop & Streaming</div>
                 <h3>VTT & Streamer Packs</h3>
                 <p>Custom-framed circular tabletop tokens and transparent emotes optimized for Discord, Twitch, and virtual tabletop sessions.</p>
             </div>
 
-            <div class="universe-card">
+            <div class="feature-card">
+                <div class="feature-icon">📜</div>
                 <div class="universe-tag">Legal Peace of Mind</div>
                 <h3>Clear Commercial Licensing</h3>
                 <p>Every download includes a straightforward developer-friendly commercial license and full transparency documentation.</p>
