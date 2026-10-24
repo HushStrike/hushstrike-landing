@@ -18,9 +18,7 @@
             --surface-panel: #0a0e17;
             --surface-card: #0d121f;
             --cyan-glow: #00f2fe;
-            --cyan-dim: rgba(0, 242, 254, 0.15);
             --purple-glow: #a855f7;
-            --purple-dim: rgba(168, 85, 247, 0.15);
             --gold-accent: #d4af37;
             --text-heading: #f8fafc;
             --text-muted: #94a3b8;
@@ -38,8 +36,8 @@
             font-family: 'Outfit', sans-serif;
             background-color: var(--bg-void);
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.18) 0%, transparent 50%),
-                radial-gradient(circle at 50% 100%, rgba(0, 242, 254, 0.1) 0%, transparent 60%);
+                radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.16) 0%, transparent 50%),
+                radial-gradient(circle at 50% 100%, rgba(0, 242, 254, 0.08) 0%, transparent 60%);
             color: var(--text-muted);
             min-height: 100vh;
             display: flex;
@@ -107,7 +105,7 @@
             border-radius: 20px;
             padding: 44px 32px;
             display: grid;
-            grid-template-columns: 200px 1fr 200px;
+            grid-template-columns: 180px 1fr 180px;
             align-items: center;
             gap: 24px;
             box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), inset 0 0 40px rgba(0, 242, 254, 0.06);
@@ -139,31 +137,35 @@
             gap: 12px;
         }
 
-        .art-avatar {
-            width: 120px;
-            height: 120px;
+        /* Slot: Empty by default, styled pedestal */
+        .art-slot {
+            width: 110px;
+            height: 110px;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
             position: relative;
         }
 
-        .relics-bg {
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(5, 7, 10, 0.8) 80%);
-            border: 1px solid rgba(168, 85, 247, 0.5);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+        .art-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            image-rendering: pixelated;
         }
 
-        .vessels-bg {
-            background: radial-gradient(circle, rgba(0, 242, 254, 0.25) 0%, rgba(5, 7, 10, 0.8) 80%);
-            border: 1px solid rgba(0, 242, 254, 0.5);
-            box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+        .relics-slot {
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, rgba(5, 7, 10, 0.8) 80%);
+            border: 1px dashed rgba(168, 85, 247, 0.4);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
         }
 
-        .art-avatar svg {
-            width: 72px;
-            height: 72px;
+        .vessels-slot {
+            background: radial-gradient(circle, rgba(0, 242, 254, 0.2) 0%, rgba(5, 7, 10, 0.8) 80%);
+            border: 1px dashed rgba(0, 242, 254, 0.4);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
         }
 
         .hero-art-label {
@@ -254,32 +256,34 @@
             border-color: rgba(0, 242, 254, 0.35);
         }
 
-        .card-preview-art {
+        /* Card Art Slot: Clean atmospheric backdrop ready for an image */
+        .card-art-slot {
             width: 100%;
-            height: 160px;
+            height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border-subtle);
-            position: relative;
+            overflow: hidden;
         }
 
-        .preview-dark-fantasy {
-            background: linear-gradient(135deg, #1b0e2b 0%, #08040d 100%);
+        .card-art-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            image-rendering: pixelated;
         }
 
-        .preview-cyberpunk {
-            background: linear-gradient(135deg, #071c26 0%, #030a10 100%);
+        .bg-fantasy {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(5, 7, 10, 0.95) 100%);
         }
 
-        .preview-cozy {
-            background: linear-gradient(135deg, #24170a 0%, #0f0904 100%);
+        .bg-cyberpunk {
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(5, 7, 10, 0.95) 100%);
         }
 
-        .card-preview-art svg {
-            width: 80px;
-            height: 80px;
-            filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.3));
+        .bg-cozy {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(5, 7, 10, 0.95) 100%);
         }
 
         .card-body {
@@ -309,7 +313,7 @@
             line-height: 1.6;
         }
 
-        /* Features */
+        /* Feature Cards */
         .feature-card {
             background-color: var(--surface-panel);
             border: 1px solid var(--border-subtle);
@@ -318,12 +322,6 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-        }
-
-        .feature-card svg {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 6px;
         }
 
         .feature-card h3 {
@@ -374,36 +372,27 @@
             <p>Engine-ready pixel art sprites, tilesets, VTT tokens, and creator tools built across dark fantasy, sci-fi, cozy, and retro aesthetics.</p>
         </header>
 
-        <!-- Flagship Release Showcase (Pack #001) -->
+        <!-- Flagship Hero Banner -->
         <section class="hero-banner">
-            <!-- Left Art: Cursed Relic Rune & Skull -->
+            <!-- Left Hero Art Slot: Blank until artwork is added -->
             <div class="hero-art-side">
-                <div class="art-avatar relics-bg">
-                    <svg viewBox="0 0 64 64" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="32 6 54 22 54 50 32 60 10 50 10 22 32 6" fill="rgba(168,85,247,0.15)"/>
-                        <path d="M32 18v28M22 28l20 10M22 38l20-10"/>
-                        <circle cx="32" cy="32" r="6" fill="#a855f7" opacity="0.6"/>
-                    </svg>
+                <div class="art-slot relics-slot" id="hero-relic-slot">
+                    <!-- Future real asset: <img src="assets/relic-preview.png" alt="Cursed Relics"> -->
                 </div>
                 <div class="hero-art-label" style="color: var(--purple-glow);">Cursed Relics</div>
             </div>
 
             <!-- Central Callout -->
-            <div class="hero-center">
+            <div class="hero-content hero-center">
                 <h2>Pack #001 Available Now</h2>
                 <p>Explore our flagship release: <strong>Cursed Relics & Soul Vessels</strong>. Multi-resolution game dev icons, animated VTT tokens, streamer emotes, and high-res print stickers crafted for indie creators across all genres.</p>
                 <a href="https://hushstrike.itch.io" target="_blank" class="btn-store">Visit Itch.io Storefront</a>
             </div>
 
-            <!-- Right Art: Soul Vessel Potion -->
+            <!-- Right Hero Art Slot: Blank until artwork is added -->
             <div class="hero-art-side">
-                <div class="art-avatar vessels-bg">
-                    <svg viewBox="0 0 64 64" fill="none" stroke="#00f2fe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M26 10h12M30 10v8l-14 26a6 6 0 0 0 5 10h22a6 6 0 0 0 5-10L34 18v-8" fill="rgba(0,242,254,0.15)"/>
-                        <circle cx="32" cy="42" r="5" fill="#00f2fe" opacity="0.8"/>
-                        <circle cx="26" cy="36" r="2" fill="#00f2fe"/>
-                        <circle cx="38" cy="34" r="3" fill="#00f2fe"/>
-                    </svg>
+                <div class="art-slot vessels-slot" id="hero-vessel-slot">
+                    <!-- Future real asset: <img src="assets/vessel-preview.png" alt="Soul Vessels"> -->
                 </div>
                 <div class="hero-art-label" style="color: var(--cyan-glow);">Soul Vessels</div>
             </div>
@@ -414,12 +403,8 @@
         <div class="grid-3">
             <!-- Dark Fantasy -->
             <div class="universe-card">
-                <div class="card-preview-art preview-dark-fantasy">
-                    <svg viewBox="0 0 64 64" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 50l36-36M46 14l4 4-8 8-4-4 8-8zM18 46l-4 4"/>
-                        <path d="M12 40l12 12M24 24l16 16"/>
-                        <path d="M50 50l-8-8"/>
-                    </svg>
+                <div class="card-art-slot bg-fantasy">
+                    <!-- Future real asset: <img src="assets/dark-fantasy.png" alt="Dark Fantasy"> -->
                 </div>
                 <div class="card-body">
                     <div class="universe-tag">Dark Fantasy & RPG</div>
@@ -430,12 +415,8 @@
 
             <!-- Cyberpunk -->
             <div class="universe-card">
-                <div class="card-preview-art preview-cyberpunk">
-                    <svg viewBox="0 0 64 64" fill="none" stroke="#00f2fe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="12" y="16" width="40" height="28" rx="6" fill="rgba(0,242,254,0.1)"/>
-                        <circle cx="24" cy="30" r="5" fill="#00f2fe"/>
-                        <path d="M36 26h8M36 34h6M20 44v8M44 44v8"/>
-                    </svg>
+                <div class="card-art-slot bg-cyberpunk">
+                    <!-- Future real asset: <img src="assets/cyberpunk.png" alt="Cyberpunk"> -->
                 </div>
                 <div class="card-body">
                     <div class="universe-tag">Cyberpunk & Sci-Fi</div>
@@ -446,11 +427,8 @@
 
             <!-- Cozy Pixel Art -->
             <div class="universe-card">
-                <div class="card-preview-art preview-cozy">
-                    <svg viewBox="0 0 64 64" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 48h40M32 14v34M22 24c4-4 8 0 10 4M42 24c-4-4-8 0-10 4M20 36c6-4 10 0 12 4M44 36c-6-4-10 0-12 4" stroke="#f59e0b"/>
-                        <circle cx="32" cy="14" r="3" fill="#f59e0b"/>
-                    </svg>
+                <div class="card-art-slot bg-cozy">
+                    <!-- Future real asset: <img src="assets/cozy.png" alt="Cozy Pixel Art"> -->
                 </div>
                 <div class="card-body">
                     <div class="universe-tag" style="color: #f59e0b;">Cozy & Retro Pixel Art</div>
@@ -463,27 +441,18 @@
         <!-- Specifications & Licensing -->
         <div class="grid-3">
             <div class="feature-card">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-                </svg>
                 <div class="universe-tag">Engine Ready</div>
                 <h3>Game Dev Ready Grids</h3>
                 <p>Clean, transparent asset grids scaled precisely from 512px down to 64px for seamless engine integration in Unity, Godot, and RPG Maker.</p>
             </div>
 
             <div class="feature-card">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                </svg>
                 <div class="universe-tag" style="color: var(--purple-glow);">Tabletop & Streaming</div>
                 <h3>VTT & Streamer Packs</h3>
                 <p>Custom-framed circular tabletop tokens and transparent emotes optimized for Discord, Twitch, and virtual tabletop sessions.</p>
             </div>
 
             <div class="feature-card">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2l8 4v6c0 5.5-3.8 10.7-8 12-4.2-1.3-8-6.5-8-12V6l8-4z"/>
-                </svg>
                 <div class="universe-tag" style="color: var(--gold-accent);">Legal Peace of Mind</div>
                 <h3>Clear Commercial Licensing</h3>
                 <p>Every download includes a straightforward developer-friendly commercial license and full transparency documentation.</p>
