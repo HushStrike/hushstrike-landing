@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HushStrike Studio — Professional Game Assets & Creator Tools across All Genres</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>HushStrike Studio | Professional Multi-Genre Game Assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-deep: #08090c;
-            --bg-card: rgba(22, 25, 34, 0.75);
-            --border-glow: rgba(0, 245, 212, 0.2);
-            --accent-teal: #00f5d4;
-            --accent-teal-glow: rgba(0, 245, 212, 0.35);
-            --accent-gold: #f4d06f;
-            --accent-purple: #b197fc;
-            --text-main: #f8fafc;
+            --bg-deep: #07090e;
+            --bg-card: #0d111a;
+            --bg-card-hover: #131a28;
+            --accent-cyan: #00f2fe;
+            --accent-blue: #4facfe;
+            --accent-purple: #9f7aea;
+            --text-main: #f1f5f9;
             --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(0, 242, 254, 0.3);
         }
 
         * {
@@ -27,295 +26,345 @@
         }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Outfit', sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            padding: 40px 20px;
             overflow-x: hidden;
-            position: relative;
+            position: background;
         }
 
-        /* Ambient background lighting effect */
         body::before {
             content: '';
-            position: absolute;
-            top: -150px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 700px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(0,245,212,0.1) 0%, rgba(177,151,252,0.06) 40%, rgba(8,9,12,0) 70%);
-            z-index: 0;
-            pointer-events: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 10%, rgba(15, 23, 42, 0.8) 0%, rgba(7, 9, 14, 0.95) 70%);
+            z-index: -1;
         }
 
-        header, main, footer {
-            position: relative;
-            z-index: 1;
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 48px;
         }
 
+        /* Header */
         header {
-            padding: 4rem 1rem 2rem;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
         }
 
-        .brand-badge {
-            display: inline-block;
-            background: rgba(0, 245, 212, 0.1);
-            color: var(--accent-teal);
-            border: 1px solid var(--border-glow);
-            padding: 0.35rem 1rem;
-            border-radius: 50px;
+        .badge {
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.25);
+            color: var(--accent-cyan);
+            padding: 6px 16px;
+            border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 1.5px;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            margin-bottom: 1.25rem;
         }
 
-        .logo {
-            font-size: 2.75rem;
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
             font-weight: 800;
-            letter-spacing: -1px;
-            color: var(--text-main);
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            color: #ffffff;
         }
 
-        .logo span {
-            background: linear-gradient(135deg, var(--accent-teal), var(--accent-purple));
+        h1 span {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .tagline {
-            color: var(--text-muted);
+        header p {
             font-size: 1.15rem;
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 400;
+            color: var(--text-muted);
+            max-width: 650px;
             line-height: 1.6;
         }
 
-        main {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem 4rem;
+        /* Hero / Flagship Banner */
+        .hero-banner {
             width: 100%;
-        }
-
-        .hero-card {
-            background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-top: 1px solid var(--border-glow);
-            border-radius: 16px;
-            padding: 3rem 2.5rem;
+            background: linear-gradient(180deg, var(--bg-card) 0%, rgba(13, 17, 26, 0.9) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 48px 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            margin-bottom: 3rem;
+            gap: 32px;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        .hero-card h2 {
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            border: 1px solid transparent;
+            background: linear-gradient(135deg, var(--border-glow), transparent) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .art-preview-row {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .art-preview-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px;
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .art-preview-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            max-width: 700px;
+        }
+
+        .hero-content h2 {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
+            color: #ffffff;
         }
 
-        .hero-card p {
+        .hero-content p {
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
             font-size: 1.05rem;
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        .hero-card strong {
-            color: var(--text-main);
-        }
-
-        .btn {
+        .btn-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--accent-teal), #00b4d8);
-            color: var(--bg-deep);
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            color: #07090e;
             font-weight: 700;
-            padding: 0.9rem 2.25rem;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 20px var(--accent-teal-glow);
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 245, 212, 0.6);
-        }
-
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-            color: var(--text-main);
-            letter-spacing: -0.3px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .genres-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .genre-box {
-            background: rgba(16, 19, 26, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 1.05rem;
+            padding: 14px 36px;
             border-radius: 12px;
-            padding: 1.75rem;
-            transition: border-color 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0, 242, 254, 0.3);
         }
 
-        .genre-box:hover {
-            border-color: rgba(0, 245, 212, 0.3);
-            transform: translateY(-3px);
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 242, 254, 0.5);
         }
 
-        .genre-tag {
+        /* Asset Universes Grid */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            align-self: flex-start;
+            margin-top: 10px;
+            color: #ffffff;
+            border-left: 4px solid var(--accent-cyan);
+            padding-left: 12px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+
+        .universe-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .universe-card:hover {
+            transform: translateY(-4px);
+            background-color: var(--bg-card-hover);
+            border-color: rgba(0, 242, 254, 0.25);
+        }
+
+        .universe-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .universe-tag {
             font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 0.5rem;
-            display: block;
+            color: var(--accent-cyan);
         }
 
-        .genre-box h3 {
-            font-size: 1.15rem;
+        .universe-card h3 {
+            font-size: 1.3rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
+            color: #ffffff;
         }
 
-        .genre-box p {
+        .universe-card p {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .feature-box {
-            background: rgba(16, 19, 26, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            border-radius: 12px;
-            padding: 1.5rem;
-        }
-
-        .feature-box h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--accent-purple);
-        }
-
-        .feature-box p {
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
-            line-height: 1.5;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            padding-top: 24px;
         }
 
         footer a {
-            color: var(--accent-teal);
+            color: var(--accent-cyan);
             text-decoration: none;
         }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
-            .logo { font-size: 2.1rem; }
-            .hero-card { padding: 2rem 1.25rem; }
-            .hero-card h2 { font-size: 1.6rem; }
+            body { padding: 20px 12px; }
+            .hero-banner { padding: 32px 16px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-badge">Professional Multi-Genre Asset Studio</div>
-        <div class="logo">HushStrike <span>Studio</span></div>
-        <div class="tagline">Engine-ready pixel art sprites, tilesets, VTT tokens, and creator tools built across dark fantasy, sci-fi, cozy, and retro aesthetics.</div>
-    </header>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="badge">Professional Multi-Genre Asset Studio</div>
+            <h1>HushStrike <span>Studio</span></h1>
+            <p>Engine-ready pixel art sprites, tilesets, VTT tokens, and creator tools built across dark fantasy, sci-fi, cozy, and retro aesthetics.</p>
+        </header>
 
-    <main>
-        <div class="hero-card">
-            <h2>Pack #001 Available Now</h2>
-            <p>Explore our flagship release: <strong>Cursed Relics & Soul Vessels</strong>. Multi-resolution game dev icons, animated VTT tokens, streamer emotes, and high-res print stickers crafted for indie creators across all genres.</p>
-            <a href="https://itch.io" class="btn" target="_blank">Visit Itch.io Storefront</a>
-        </div>
+        <!-- Hero / Flagship Release Banner -->
+        <section class="hero-banner">
+            <div class="art-preview-row">
+                <div class="art-preview-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Cursed Relics Preview">
+                    <span style="font-size: 0.85rem; color: var(--accent-purple); font-weight: 600;">Cursed Relics & Artifacts</span>
+                </div>
+                <div class="art-preview-card">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Soul Vessels Preview">
+                    <span style="font-size: 0.85rem; color: var(--accent-cyan); font-weight: 600;">Soul Vessels & Potions</span>
+                </div>
+            </div>
 
-        <h3 class="section-title">Explore Our Asset Universes</h3>
-        <div class="genres-grid">
-            <div class="genre-box">
-                <span class="genre-tag">Dark Fantasy & RPG</span>
+            <div class="hero-content">
+                <h2>Pack #001 Available Now</h2>
+                <p>Explore our flagship release: <strong>Cursed Relics & Soul Vessels</strong>. Multi-resolution game dev icons, animated VTT tokens, streamer emotes, and high-res print stickers crafted for indie creators across all genres.</p>
+                <a href="https://itch.io" target="_blank" class="btn-primary">Visit Itch.io Storefront</a>
+            </div>
+        </section>
+
+        <!-- Asset Universes Grid -->
+        <h2 class="section-title">Explore Our Asset Universes</h2>
+        <div class="grid-3">
+            <div class="universe-card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Dark Fantasy Art" class="universe-img">
+                <div class="universe-tag">Dark Fantasy & RPG</div>
                 <h3>Grim & Heroic Realms</h3>
                 <p>Gritty combat sprites, weathered steel armor icons, arcane spell effects, and cavernous battle backgrounds built for atmospheric adventures.</p>
             </div>
-            <div class="genre-box">
-                <span class="genre-tag">Cyberpunk & Sci-Fi</span>
+
+            <div class="universe-card">
+                <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80" alt="Cyberpunk Sci-Fi Art" class="universe-img">
+                <div class="universe-tag">Cyberpunk & Sci-Fi</div>
                 <h3>Neon & Dystopian Tech</h3>
                 <p>Holographic UI elements, cybernetic gear, gritty urban tilesets, and high-tech weapon iconography for futuristic game settings.</p>
             </div>
-            <div class="genre-box">
-                <span class="genre-tag">Cozy & Retro Pixel Art</span>
+
+            <div class="universe-card">
+                <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=600&q=80" alt="Cozy Pixel Art" class="universe-img">
+                <div class="universe-tag">Cozy & Retro Pixel Art</div>
                 <h3>Charming & Nostalgic Worlds</h3>
                 <p>Vibrant farming tiles, cheerful character sprites, relaxing UI frames, and classic 16-bit sprite sheets tailored for heartwarming indie titles.</p>
             </div>
         </div>
 
-        <div class="features-grid">
-            <div class="feature-box">
-                <h4>Game Dev Ready Grids</h4>
+        <!-- Features Grid -->
+        <div class="grid-3">
+            <div class="universe-card">
+                <div class="universe-tag">Engine Ready</div>
+                <h3>Game Dev Ready Grids</h3>
                 <p>Clean, transparent asset grids scaled precisely from 512px down to 64px for seamless engine integration in Unity, Godot, and RPG Maker.</p>
             </div>
-            <div class="feature-box">
-                <h4>VTT & Streamer Packs</h4>
+
+            <div class="universe-card">
+                <div class="universe-tag">Tabletop & Streaming</div>
+                <h3>VTT & Streamer Packs</h3>
                 <p>Custom-framed circular tabletop tokens and transparent emotes optimized for Discord, Twitch, and virtual tabletop sessions.</p>
             </div>
-            <div class="feature-box">
-                <h4>Clear Commercial Licensing</h4>
+
+            <div class="universe-card">
+                <div class="universe-tag">Legal Peace of Mind</div>
+                <h3>Clear Commercial Licensing</h3>
                 <p>Every download includes a straightforward developer-friendly commercial license and full transparency documentation.</p>
             </div>
         </div>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 HushStrike Studio. All rights reserved. &bull; Contact: <a href="mailto:support@hushstrikestudio.com">support@hushstrikestudio.com</a></p>
-    </footer>
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 HushStrike Studio. All rights reserved. &bull; Contact: <a href="mailto:support@hushstrikestudio.com">support@hushstrikestudio.com</a></p>
+        </footer>
+    </div>
 
 </body>
 </html>
