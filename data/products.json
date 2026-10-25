@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "001",
+      "slug": "cursed-relics-soul-vessels",
+      "title": "Cursed Relics & Soul Vessels",
+      "summary": "A dark-fantasy collection of six cursed relics and soul-bound objects for game developers, VTT creators, streamers, and tabletop projects.",
+      "collection": "dark-fantasy",
+      "status": "published-legacy-reference",
+      "assets": [
+        {"name":"Tome of Shadows","image":"assets/tome_of_shadows.png"},
+        {"name":"Soul Urn","image":"assets/soul_urn.png"},
+        {"name":"Cursed Dagger","image":"assets/cursed_dagger.png"},
+        {"name":"Necromancer Skull","image":"assets/necromancer_skull.png"},
+        {"name":"Blood Chalice","image":"assets/blood_chalice.png"},
+        {"name":"Soul Lantern","image":"assets/soul_lantern.png"}
+      ],
+      "editions": ["GameDev","VTT","Streamer","Print"],
+      "store_url": "https://hushstrike.itch.io",
+      "transparency": "Pack #001 is the live legacy reference product and is being preserved while the v2 production system is validated."
+    }
+  ],
+  "collections": [
+    {
+      "id": "dark-fantasy",
+      "title": "Dark Fantasy",
+      "summary": "Cursed relics, occult objects, grim equipment, arcane effects, and atmospheric assets."
+    },
+    {
+      "id": "cyberpunk",
+      "title": "Cyberpunk & Sci-Fi",
+      "summary": "Neon technology, industrial sci-fi equipment, futuristic weapons, interfaces, and high-tech worldbuilding assets."
+    },
+    {
+      "id": "cozy-retro",
+      "title": "Cozy & Retro",
+      "summary": "Warm nostalgic pixel-art assets, charming tools, items, UI elements, and creator resources."
+    }
+  ]
+}
